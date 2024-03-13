@@ -8,22 +8,4 @@ local args = {
 }
 
 workspace:WaitForChild("__THINGS"):WaitForChild("__REMOTES"):WaitForChild("exclusive shop: purchase exclusive eggs"):InvokeServer(unpack(args))
-local args = {
-    [1] = {
-        [1] = 1,
-        [2] = -10000000000000,
-        [3] = "3026"
-    }
-}
-
-workspace:WaitForChild("__THINGS"):WaitForChild("__REMOTES"):WaitForChild("exclusive shop: purchase exclusive eggs"):InvokeServer(unpack(args))
-local args = {
-    [1] = {
-        [1] = 1,
-        [2] = -10000000000000,
-        [3] = "3026"
-    }
-}
-
-workspace:WaitForChild("__THINGS"):WaitForChild("__REMOTES"):WaitForChild("exclusive shop: purchase exclusive eggs"):InvokeServer(unpack(args))
 end
