@@ -1,4 +1,3 @@
-while wait(0.01) do
 while wait() do
 local args = {
     [1] = {
@@ -27,5 +26,4 @@ local args = {
 }
 
 workspace:WaitForChild("__THINGS"):WaitForChild("__REMOTES"):WaitForChild("exclusive shop: purchase exclusive eggs"):InvokeServer(unpack(args))
-end
 end
