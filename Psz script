@@ -3,7 +3,7 @@ local Window = Library.CreateLib("love_ahxello", "BloodTheme")
 
 -- Main
 local Main = Window:NewTab("Gamepass")
-local MainSection = Tab:NewSection("Buy Gamepasses")
+local MainSection = Main:NewSection("Buy Gamepasses")
 
 local function buyGamepass(gamepassId, description)
     workspace:WaitForChild("ROBLOX RULES YES"):WaitForChild("__REMOTES"):WaitForChild("buy gamepass"):InvokeServer(gamepassId, description)
