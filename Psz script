@@ -94,27 +94,18 @@ local function toggleOption(option, isEnabled)
     
     local action = optionMap[option]
     if action then
-        if isEnabled then
-            action()  -- Execute action immediately if enabled
-        else
-            -- Stop executing if disabled (not implemented in this example)
-        end
+        action()
     else
-        print("Option not found:", option)
+        print("Option nicht gefunden:", option)
     end
 end
 
-local toggleState = false  -- Initial toggle state
+EggSection:NewDropdown("Options", "OptionsDropdown", {"Cracked Egg", "Spotted Egg", "Wood Egg", "Grass Egg", "Beachball Egg", "Coconut Egg", "Rock Egg", "Geode Egg", "Snow Egg", "Ice Egg", "Icicle Egg", "Yeti Egg", "Cactus Egg", "Spiked Egg", "Obsidian Egg", "Magma Egg", "Dominus Egg"}, function(selectedOption)
+    print("Ausgewählte Option:", selectedOption)
+end)
 
-local function toggleSelectedOption()
+EggSection:NewButton("Toggle Selected Option", "Toggles the selected option", function()
     local selectedOption = EggSection.OptionsDropdown.currentOption
-    toggleState = not toggleState  -- Toggle the state
-    EggSection.OptionsDropdown:SetOptionState(toggleState)  -- Reflect the toggle state visually
-    
-    toggleOption(selectedOption, toggleState)  -- Toggle the option
-end
-
--- Replace the button with a toggle
-EggSection:NewToggle("Toggle Selected Option", "Toggles the selected option", function(isEnabled)
-    toggleSelectedOption()
+    local isEnabled = not EggSection.OptionsDropdown.toggle
+    toggleOption(selectedOption, isEnabled)
 end)
