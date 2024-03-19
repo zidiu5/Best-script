@@ -8,48 +8,63 @@ local MainSection = Main:NewSection("Buy Gamepasses")
 local function buyGamepass(gamepassId, description)
     workspace:WaitForChild("ROBLOX RULES YES"):WaitForChild("__REMOTES"):WaitForChild("buy gamepass"):InvokeServer(gamepassId, description)
 end
-Section:MainButton("Lucky", "Buys Lucky Gamepass", function()
+
+MainSection:NewButton("Lucky", "Buys Lucky Gamepass", function()
     buyGamepass(683292030, "Lucky")
 end)
-Section:MainButton("Auto Hatch", "Buys Auto Hatch Gamepass", function()
+
+MainSection:NewButton("Auto Hatch", "Buys Auto Hatch Gamepass", function()
     buyGamepass(239769964, "Auto Hatch")
 end)
-Section:MainButton("Hoverboard", "Buys Hoverboard Gamepass", function()
+
+MainSection:NewButton("Hoverboard", "Buys Hoverboard Gamepass", function()
     buyGamepass(239771490, "Hoverboard")
-end
-Section:MainButton("Teleport", "Buys Teleport Gamepass", function()
+end)
+
+MainSection:NewButton("Teleport", "Buys Teleport Gamepass", function()
     buyGamepass(254430258, "Teleport")
 end)
-Section:MainButton("Skip Egg Open", "Buys Skip Egg Open Gamepass", function()
+
+MainSection:NewButton("Skip Egg Open", "Buys Skip Egg Open Gamepass", function()
     buyGamepass(239770648, "Skip Egg Open")
 end)
-Section:MainButton("Pet Storage", "Buys Pet Storage Gamepass", function()
+
+MainSection:NewButton("Pet Storage", "Buys Pet Storage Gamepass", function()
     buyGamepass(239770349, "Pet Storage")
 end)
-Section:MainButton("Super Pet Storage", "Buys Super Pet Storage Gamepass", function()
+
+MainSection:NewButton("Super Pet Storage", "Buys Super Pet Storage Gamepass", function()
     buyGamepass(239770174, "Super Pet Storage")
 end)
-Section:MainButton("Magnet", "Buys Magnet Gamepass", function()
+
+MainSection:NewButton("Magnet", "Buys Magnet Gamepass", function()
     buyGamepass(272929139, "Magnet")
 end)
-Section:MainButton("VIP", "Buys VIP Gamepass", function()
+
+MainSection:NewButton("VIP", "Buys VIP Gamepass", function()
     buyGamepass(239771752, "VIP")
 end)
-Section:MainButton("Mythical Hunter", "Buys Mythical Hunter Gamepass", function()
+
+MainSection:NewButton("Mythical Hunter", "Buys Mythical Hunter Gamepass", function()
     buyGamepass(272928960, "Mythical Hunter")
 end)
-Section:MainButton("Triple Egg Open", "Buys Triple Egg Open Gamepass", function()
+
+MainSection:NewButton("Triple Egg Open", "Buys Triple Egg Open Gamepass", function()
     buyGamepass(239771284, "Triple Egg Open")
-end
-Section:MainButton("Magic Eggs", "Buys Magic Eggs Gamepass", function()
+end)
+
+MainSection:NewButton("Magic Eggs", "Buys Magic Eggs Gamepass", function()
     buyGamepass(272929077, "Magic Eggs")
 end)
-Section:MainButton("8 Pets Equipped", "Buys 8 Pets Equipped Gamepass", function()
+
+MainSection:NewButton("8 Pets Equipped", "Buys 8 Pets Equipped Gamepass", function()
     buyGamepass(264133235, "8 Pets Equipped")
 end)
+
+
 -- AutoFarm
 local Farm = Window:NewTab("AutoFarm (NOT WORKING)")
-local FarmSection = Tab:NewSection("AutoFarm")
+local FarmSection = Farm:NewSection("AutoFarm")
 
 
 -- Egg
@@ -85,12 +100,12 @@ local function toggleOption(option, isEnabled)
     end
 end
 
-EggSection:NewDropdown("Options", "DropdownOptions", {"Cracked Egg", "Spotted Egg", "Wood Egg", "Grass Egg", "Beachball Egg", "Coconut Egg", "Rock Egg", "Geode Egg", "Snow Egg", "Ice Egg", "Icicle Egg", "Yeti Egg", "Cactus Egg", "Spiked Egg", "Obsidian Egg", "Magma Egg", "Dominus Egg"}, function(selectedOption)
+EggSection:NewDropdown("Options", "OptionsDropdown", {"Cracked Egg", "Spotted Egg", "Wood Egg", "Grass Egg", "Beachball Egg", "Coconut Egg", "Rock Egg", "Geode Egg", "Snow Egg", "Ice Egg", "Icicle Egg", "Yeti Egg", "Cactus Egg", "Spiked Egg", "Obsidian Egg", "Magma Egg", "Dominus Egg"}, function(selectedOption)
     print("Ausgewählte Option:", selectedOption)
 end)
 
 EggSection:NewButton("Toggle Selected Option", "Toggles the selected option", function()
-    local selectedOption = EggSection.DropdownOptions.currentOption
-    local isEnabled = not EggSection.DropdownOptions.toggle
+    local selectedOption = EggSection.OptionsDropdown.currentOption
+    local isEnabled = not EggSection.OptionsDropdown.toggle
     toggleOption(selectedOption, isEnabled)
 end)
